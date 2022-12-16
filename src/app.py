@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from flask import Flask, request
 
 from utils.utils import format_simple_response, process_request
@@ -16,6 +18,11 @@ def dialogflow():
     data = request.get_json()
 
     action, _, _, _, _ = process_request(data)
+
+    timestamp = datetime.now().strftime('%m/%d/%Y, %H:%M:%S')
+    print(f'{timestamp}')
+    print('A new request came...')
+    print(f'Action - {action}')
 
     if action == 'confirmsDataPrivacy':
         response_data = confirms_data_privacy(data)

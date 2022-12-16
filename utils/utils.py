@@ -1,8 +1,6 @@
 from typing import List
 import json
 
-from flask import request
-
 
 def format_complex_response(messages: List[str], buttons: List[str] = [], images: List[str] = [], oc: List[dict] = []) -> dict:
     '''
@@ -62,12 +60,12 @@ def process_request(data: dict) -> tuple:
     Returns:
         - tuple of things action, output_contexts, intent_name, query, session
     '''
-    
+
     action = data['queryResult']['action']
     output_contexts = data['queryResult']['outputContexts']
     intent_name = data['queryResult']['intent']['displayName']
     query = data['queryResult']['queryText']
-    
+
     session = ''
     if 'session' in data.keys():
         session = data['session']

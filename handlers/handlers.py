@@ -65,9 +65,10 @@ def user_provides_selfie(data: dict) -> dict:
         name = parameters['person']['name']
 
         return format_simple_response(
-            message=f'Ok {name.capitalize()}. One more question left: What is your relationship status',
+            message=f'Ok {name.capitalize()}. One more question left: What is your relationship status?',
             oc=oc
         )
+
 
 def user_provides_name(data: dict) -> dict:
     '''
@@ -185,8 +186,10 @@ def registered_user_provides_password(data: dict) -> dict:
 
     '''
     TODO
-    check registration...
+    [] check registration...
     '''
+
+    
 
     return format_simple_response(
         message='Good to see you [User name]. So for this reading session just send me your cup image.'
